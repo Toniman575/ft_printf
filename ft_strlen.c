@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 12:17:03 by asadik            #+#    #+#             */
-/*   Updated: 2025/12/17 12:41:57 by asadik           ###   ########.fr       */
+/*   Created: 2025/09/29 16:04:54 by asadik            #+#    #+#             */
+/*   Updated: 2025/12/17 12:44:15 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
 #include <stdio.h>
 
-int		ft_isprint(int c);
-void	ft_putchar_fd(char c, int fd);
-size_t	ft_strlen(const char *s);
-int 	ft_printf(const char *str, ...);
+/// Returns length of a string, not including '\0'.
+/// Given string must me null-terminated to avoid undefined behaviour.
+size_t	ft_strlen(const char *s)
+{
+	size_t	len;
 
-#endif
+	len = 0;
+	while (*s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
+}

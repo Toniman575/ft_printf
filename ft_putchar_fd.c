@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 12:17:03 by asadik            #+#    #+#             */
-/*   Updated: 2025/12/17 12:41:57 by asadik           ###   ########.fr       */
+/*   Created: 2025/10/12 12:00:33 by asadik            #+#    #+#             */
+/*   Updated: 2025/12/17 12:13:57 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-#include <stdio.h>
+#include <unistd.h>
 
-int		ft_isprint(int c);
-void	ft_putchar_fd(char c, int fd);
-size_t	ft_strlen(const char *s);
-int 	ft_printf(const char *str, ...);
-
-#endif
+/// @brief Writes a character to the given filedescriptor.
+/// @param c the character to be written.
+/// @param fd the filedescriptor written to.
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

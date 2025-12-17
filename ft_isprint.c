@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 12:17:03 by asadik            #+#    #+#             */
-/*   Updated: 2025/12/17 12:41:57 by asadik           ###   ########.fr       */
+/*   Created: 2025/09/29 15:49:30 by asadik            #+#    #+#             */
+/*   Updated: 2025/12/17 12:13:53 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-#include <stdio.h>
-
-int		ft_isprint(int c);
-void	ft_putchar_fd(char c, int fd);
-size_t	ft_strlen(const char *s);
-int 	ft_printf(const char *str, ...);
-
-#endif
+int	ft_isprint(int c)
+{
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
+}
