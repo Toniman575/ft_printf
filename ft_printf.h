@@ -6,7 +6,7 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:17:03 by asadik            #+#    #+#             */
-/*   Updated: 2026/01/05 11:23:11 by asadik           ###   ########.fr       */
+/*   Updated: 2026/01/05 11:43:39 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdio.h>
 # include "libft/libft.h"
 
+int		ft_printf(const char *str, ...);
 int		ft_isprint(int c);
 void	ft_putchar_fd(char c, int fd);
 int		ft_strlen(const char *s);

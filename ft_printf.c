@@ -6,7 +6,7 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:16:25 by asadik            #+#    #+#             */
-/*   Updated: 2026/01/05 10:52:08 by asadik           ###   ########.fr       */
+/*   Updated: 2026/01/05 11:57:40 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	ft_printf(const char *str, ...)
 		{
 			write(1, &str[cursor], 1);
 			cursor++;
+			length++;
 		}
 		else
 		{
@@ -65,6 +66,5 @@ int	ft_printf(const char *str, ...)
 			cursor += 2;
 		}
 	}
-	va_end(list);
-	return (cursor + length);
+	return (va_end(list), length);
 }
