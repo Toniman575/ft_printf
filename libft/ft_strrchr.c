@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 15:49:30 by asadik            #+#    #+#             */
-/*   Updated: 2025/09/29 16:02:30 by asadik           ###   ########.fr       */
+/*   Created: 2025/10/01 14:30:14 by asadik            #+#    #+#             */
+/*   Updated: 2025/10/16 14:42:09 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	char	*cr;
+	char	cc;
+
+	cr = 0;
+	cc = (char) c;
+	while (*s != '\0')
+	{
+		if (*s == cc)
+			cr = (char *)s;
+		s++;
+	}
+	if (cc == '\0')
+		return ((char *)s);
+	return (cr);
 }

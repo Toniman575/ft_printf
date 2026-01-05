@@ -1,0 +1,45 @@
+{
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "make printf",
+			"command": "make",
+			"args": ["debug"],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": ["$gcc"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Runs make to build the printf archive"
+		},
+		{
+			"type": "shell",
+			"label": "printf tests",
+			"command": "cc",
+			"args": [
+				"-Wall",
+				"-Wextra",
+				"-Werror",
+				"tests.c",
+				"libftprintf.a",
+				"-g",
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": ["$gcc"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Compiles tests",
+			"dependsOn": [
+				"make printf"
+			]
+		}
+	],
+	"version": "2.0.0"
+}
