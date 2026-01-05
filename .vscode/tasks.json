@@ -20,9 +20,6 @@
 			"label": "printf tests",
 			"command": "cc",
 			"args": [
-				"-Wall",
-				"-Wextra",
-				"-Werror",
 				"tests.c",
 				"libftprintf.a",
 				"-g",

@@ -6,52 +6,45 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 09:42:24 by asadik            #+#    #+#             */
-/*   Updated: 2026/01/05 10:21:32 by asadik           ###   ########.fr       */
+/*   Updated: 2026/01/05 13:44:37 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft/libft.h"
 
-int	p_char(int arg)
+void	p_char(int arg, int *length)
 {
-	if (ft_isprint(arg))
-	{
-		ft_putchar_fd(arg, 1);
-		return (1);
-	}
-	else
-		return (0);
+	ft_putchar_fd((unsigned char)arg, 1);
+	(*length)++;
 }
 
-int	p_string(unsigned long int ptr, int *length)
+void	p_string(unsigned long int ptr, int *length)
 {
 	char	*string;
 
-	string = (char *)ptr;
-	if (string)
+	if (!ptr)
 	{
-		*length += ft_strlen(string);
-		while (*string != '\0')
-		{
-			if (!ft_isprint(*string))
-				return (0);
-			ft_putchar_fd(*string, 1);
-			string++;
-		}
-		return (1);
+		ft_putstr_fd("(null)", 1);
+		(*length) += 6;
 	}
-	return (0);
+	else
+	{
+		string = (char *)ptr;
+		*length += ft_strlen(string);
+		ft_putstr_fd(string, 1);
+	}
 }
 
 void	putnbr_base_16(unsigned long int n, char *base, int *length)
 {
-	int	current;
-	int	div;
+	long int	current;
+	long int	div;
 
 	div = 1;
 	while (n / div > 15)
 		div *= 16;
-	while (n > 15)
+	while (div > 0)
 	{
 		current = n / div;
 		n %= div;

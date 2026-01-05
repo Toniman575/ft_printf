@@ -6,7 +6,7 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:16:25 by asadik            #+#    #+#             */
-/*   Updated: 2026/01/05 11:57:40 by asadik           ###   ########.fr       */
+/*   Updated: 2026/01/05 13:10:41 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 int	coordinator(int cursor, int *length, const char *str, va_list *list)
 {
 	if (str[cursor] == 'c')
-		return (p_char(va_arg(*list, int)));
+		p_char(va_arg(*list, int), length);
 	else if (str[cursor] == 's')
-		return (p_string(va_arg(*list, long int), length));
+		p_string(va_arg(*list, long int), length);
 	else if (str[cursor] == 'p')
 		p_pointer(va_arg(*list, unsigned long int), length);
 	else if (str[cursor] == 'd' || str[cursor] == 'i')
@@ -31,7 +31,10 @@ int	coordinator(int cursor, int *length, const char *str, va_list *list)
 	else if (str[cursor] == 'X')
 		p_hex_upper(va_arg(*list, unsigned int), length);
 	else if (str[cursor] == '%')
-		write(1, "%%", 2);
+	{
+		write(1, "%", 1);
+		(*length) += 1;
+	}
 	else
 	{
 		write(1, "%", 1);
