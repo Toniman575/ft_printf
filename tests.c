@@ -76,6 +76,11 @@ int main()
 	printf("Length mine: %d\n", a);
 	b = printf( " %p %p ", ULONG_MAX, -ULONG_MAX);
 	printf("Length og: %d\n", b);
+	
+	a = ft_printf( " %p %p %p ", ULONG_MAX, -ULONG_MAX, -ULONG_MAX, -ULONG_MAX, -ULONG_MAX);
+	printf("Length mine: %d\n", a);
+	b = printf( " %p %p %p ", ULONG_MAX, -ULONG_MAX, -ULONG_MAX, -ULONG_MAX, -ULONG_MAX);
+	printf("Length og: %d\n", b);
 
 	free(random_pointer);
 }

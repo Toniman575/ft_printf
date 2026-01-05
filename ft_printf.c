@@ -6,7 +6,7 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:16:25 by asadik            #+#    #+#             */
-/*   Updated: 2026/01/05 15:00:28 by asadik           ###   ########.fr       */
+/*   Updated: 2026/01/05 15:18:16 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdarg.h>
 #include "ft_printf_util.h"
 
-static int	coordinator(int cursor, int *length, const char *str, va_list *list)
+static void	coordinator(int cursor, int *length, const char *str, va_list *list)
 {
 	if (str[cursor] == 'c')
 		p_char(va_arg(*list, int), length);
@@ -40,7 +40,6 @@ static int	coordinator(int cursor, int *length, const char *str, va_list *list)
 		write(1, "%", 1);
 		write(1, &str[cursor], 1);
 	}
-	return (1);
 }
 
 int	ft_printf(const char *str, ...)
@@ -64,8 +63,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			if (!coordinator(cursor + 1, &length, str, &list))
-				return (-1);
+			coordinator(cursor + 1, &length, str, &list);
 			cursor += 2;
 		}
 	}
