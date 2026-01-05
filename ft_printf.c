@@ -6,15 +6,15 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:16:25 by asadik            #+#    #+#             */
-/*   Updated: 2026/01/05 13:10:41 by asadik           ###   ########.fr       */
+/*   Updated: 2026/01/05 15:00:28 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdarg.h>
-#include "ft_printf.h"
+#include "ft_printf_util.h"
 
-int	coordinator(int cursor, int *length, const char *str, va_list *list)
+static int	coordinator(int cursor, int *length, const char *str, va_list *list)
 {
 	if (str[cursor] == 'c')
 		p_char(va_arg(*list, int), length);
@@ -27,9 +27,9 @@ int	coordinator(int cursor, int *length, const char *str, va_list *list)
 	else if (str[cursor] == 'u')
 		p_uinteger(va_arg(*list, unsigned int), length);
 	else if (str[cursor] == 'x')
-		p_hex_lower(va_arg(*list, unsigned int), length);
+		putnbr_base_16(va_arg(*list, unsigned int), "0123456789abcdef", length);
 	else if (str[cursor] == 'X')
-		p_hex_upper(va_arg(*list, unsigned int), length);
+		putnbr_base_16(va_arg(*list, unsigned int), "0123456789ABCDEF", length);
 	else if (str[cursor] == '%')
 	{
 		write(1, "%", 1);

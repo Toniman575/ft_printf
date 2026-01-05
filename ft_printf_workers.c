@@ -6,13 +6,13 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 09:54:35 by asadik            #+#    #+#             */
-/*   Updated: 2026/01/05 10:21:49 by asadik           ###   ########.fr       */
+/*   Updated: 2026/01/05 15:00:09 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-#include "ft_printf.h"
+#include "ft_printf_util.h"
 
 void	p_pointer(unsigned long int ptr, int *length)
 {
@@ -72,12 +72,25 @@ void	p_uinteger(unsigned int nbr, int *length)
 	}
 }
 
-void	p_hex_lower(unsigned int nbr, int *length)
+void	p_char(int arg, int *length)
 {
-	putnbr_base_16(nbr, "0123456789abcdef", length);
+	ft_putchar_fd((unsigned char)arg, 1);
+	(*length)++;
 }
 
-void	p_hex_upper(unsigned int nbr, int *length)
+void	p_string(unsigned long int ptr, int *length)
 {
-	putnbr_base_16(nbr, "0123456789ABCDEF", length);
+	char	*string;
+
+	if (!ptr)
+	{
+		ft_putstr_fd("(null)", 1);
+		(*length) += 6;
+	}
+	else
+	{
+		string = (char *)ptr;
+		*length += ft_strlen(string);
+		ft_putstr_fd(string, 1);
+	}
 }
