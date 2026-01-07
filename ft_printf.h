@@ -6,13 +6,12 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 12:17:03 by asadik            #+#    #+#             */
-/*   Updated: 2026/01/05 15:00:22 by asadik           ###   ########.fr       */
+/*   Updated: 2026/01/07 10:35:39 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include <stdio.h>
 # include "libft/libft.h"
 
 int		ft_printf(const char *str, ...);
