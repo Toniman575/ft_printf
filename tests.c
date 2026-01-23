@@ -6,77 +6,81 @@
 int main()
 {
 	//char *test = "asd";
+	printf("Printing numbers\n\n");
 	int a = ft_printf("%d\n", 10000500);
 	printf("Length mine: %d\n", a);
 	int b = printf("%d\n", 10000500);
 	printf("Length og: %d\n", b);
+	printf("\n");
 	a = ft_printf("%d\n", 10);
 	printf("Length mine: %d\n", a);
 	b = printf("%d\n", 10);
 	printf("Length og: %d\n", b);
-
+	printf("\n");
 	a = ft_printf("%d\n", 1);
 	printf("Length mine: %d\n", a);
 	b = printf("%d\n", 1);
 	printf("Length og: %d\n", b);
-
+	printf("\n");
 	a = ft_printf("%d\n", INT_MAX);
 	printf("Length mine: %d\n", a);
 	b = printf("%d\n", INT_MAX);
 	printf("Length og: %d\n", b);
-	
+	printf("\n");
 	a = ft_printf("%d\n", INT_MIN);
 	printf("Length mine: %d\n", a);
 	b = printf("%d\n", INT_MIN);
 	printf("Length og: %d\n", b);
-	
+	printf("\n");
 	a = ft_printf("%d\n", 0);
 	printf("Length mine: %d\n", a);
 	b = printf("%d\n", 0);
 	printf("Length og: %d\n", b);
-
+	printf("------------------------------------\n");
+	printf("Printing strings\n\n");
 	a = ft_printf("%s\n", "imagine");
 	printf("Length mine: %d\n", a);
 	b = printf("%s\n", "imagine");
 	printf("Length og: %d\n", b);
-	
+	printf("\n");
 	a = ft_printf(" %s %s ", "", "-");
 	printf("Length mine: %d\n", a);
 	b = printf(" %s %s ", "", "-");
 	printf("Length og: %d\n", b);
-	
+	printf("\n");
 	b = printf(" NULL %s NULL ", NULL);
 	printf("Length og: %d\n", b);
 	a = ft_printf(" NULL %s NULL ", NULL);
 	printf("Length mine: %d\n", a);
-
+	printf("------------------------------------\n");
+	printf("Printing chars\n\n");
 	a = ft_printf("%c", 'i');
 	printf("Length mine: %d\n", a);
 	b = printf("%c", 'i');
 	printf("Length og: %d\n", b);
-	
+	printf("\n");
 	a = ft_printf("%c", '0' - 256);
 	printf("Length mine: %d\n", a);
 	b = printf("%c", '0' - 256);
 	printf("Length og: %d\n", b);
-
+	printf("------------------------------------\n");
 	void *random_pointer = malloc(5);
-
+	printf("Printing Pointers\n\n");
 	a = ft_printf("%p", random_pointer);
 	printf("Length mine: %d\n", a);
 	b = printf("%p", random_pointer);
 	printf("Length og: %d\n", b);
-
+	printf("\n");
 	a = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
 	printf("Length mine: %d\n", a);
 	b = printf(" %p %p ", LONG_MIN, LONG_MAX);
 	printf("Length og: %d\n", b);
-
+	printf("\n");
 	a = ft_printf( " %p %p ", ULONG_MAX, -ULONG_MAX);
 	printf("Length mine: %d\n", a);
 	b = printf( " %p %p ", ULONG_MAX, -ULONG_MAX);
 	printf("Length og: %d\n", b);
-	
+	printf("\n");
 	a = ft_printf( " %p %p %p ", ULONG_MAX, -ULONG_MAX, -ULONG_MAX, -ULONG_MAX, -ULONG_MAX);
 	printf("Length mine: %d\n", a);
 	b = printf( " %p %p %p ", ULONG_MAX, -ULONG_MAX, -ULONG_MAX, -ULONG_MAX, -ULONG_MAX);
