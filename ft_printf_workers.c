@@ -6,13 +6,14 @@
 /*   By: asadik <asadik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 09:54:35 by asadik            #+#    #+#             */
-/*   Updated: 2026/01/07 10:36:06 by asadik           ###   ########.fr       */
+/*   Updated: 2026/01/23 14:07:48 by asadik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 #include "ft_printf_util.h"
+#include "libft/libft.h"
 
 void	p_pointer(unsigned long int ptr, int *length)
 {
