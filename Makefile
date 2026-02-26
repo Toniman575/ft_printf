@@ -1,9 +1,9 @@
-NAME =  libftprintf.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -MMD -MP -I..
-SRCS =  ft_printf.c ft_printf_util.c ft_printf_workers.c
-OBJS =  $(SRCS:.c=.o)
-DEPS = $(OBJS:.o=.d)
+NAME =		libftprintf.a
+CC =		cc
+CFLAGS =	-Wall -Wextra -Werror -MMD -MP -I..
+SRCS =		ft_printf.c ft_printf_util.c ft_printf_workers.c
+OBJS =		$(SRCS:.c=.o)
+DEPS =		$(OBJS:.o=.d)
 
 all: $(NAME)
 
