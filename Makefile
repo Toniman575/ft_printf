@@ -8,7 +8,7 @@ DEPS =		$(OBJS:.o=.d)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	ar rcT $(NAME) $(OBJS)
 clean:
 	rm -f $(OBJS) $(DEPS)
 
@@ -20,6 +20,3 @@ re: fclean all
 .PHONY: all clean fclean re
 
 -include $(DEPS)
-
-print_objs:
-	@echo $(addprefix $(shell pwd)/, $(OBJS))
